@@ -2009,7 +2009,7 @@ module srl_nokia-ospf {
         uses ospf-as-lsdb-structure;
         uses srl_nokia-ldp:ldp-sync-global-config;
 
-        must './router-id != default or (../../../router-id != default and ../../../router-id != "0.0.0.0")' {
+        must './router-id != "default" or (../../../srl_nokia-netinst:router-id != "default" and ../../../srl_nokia-netinst:router-id != "0.0.0.0")' {
           error-message "Must have router-id defined in network-instance or in ospf-instance andit can not be 0.0.0.0";
         }
 
