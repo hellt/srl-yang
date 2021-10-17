@@ -559,10 +559,10 @@ module srl_nokia-qos {
             srl_nokia-ext:first-released "19.11.1";
             presence
               "Enables configuration of QoS parameters for the interface";
-            must "starts-with(../name, 'ethernet') or starts-with(../name, 'lag')" {
+            must "starts-with(../srl_nokia-if:name, 'ethernet') or starts-with(../srl_nokia-if:name, 'lag')" {
                 error-message "QoS does not apply to this interface type";
             }
-            must "not(../breakout-mode)" {
+            must "not(../srl_nokia-if:breakout-mode)" {
               error-message "QoS does not apply when breakout-mode is enabled";
             }
             container output {
